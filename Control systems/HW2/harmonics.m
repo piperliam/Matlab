@@ -1,0 +1,1 @@
+harmonic(sym(1:20))
