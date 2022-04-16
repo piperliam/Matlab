@@ -1,16 +1,15 @@
-
 clc; close all; clear all;
 
 %inital parameters 
-t0=1;
-tf=6;
+t0=7;
+tf=5;
 dt=0.1;
 t=t0:dt:tf;
 xCurr=[2;1];
 xState=zeros(length(xCurr),length(t));
 xState(:,1)=xCurr;
 ut=@(t) cos(t);
-xT=@(t) 3/5*exp(-3*t+3)+7/5*exp(2*t-2);
+xT=@(t) exp(1*t+3)+exp(2*t-2);
 %% RK4
 for i=2:length(t)
     k1=sysDyn(xCurr,ut(t(i)))*dt;
